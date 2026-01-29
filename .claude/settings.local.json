@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__serena__list_dir",
+      "mcp__serena__find_file",
+      "mcp__serena__activate_project",
+      "Bash(dir:*)",
+      "Bash(tree:*)",
+      "Bash(pwsh:*)",
+      "Bash(powershell -ExecutionPolicy Bypass -File .specify/scripts/powershell/check-prerequisites.ps1:*)",
+      "Bash(git -C \"e:/code_study\" branch --show-current)",
+      "Bash(git rev-parse:*)"
+    ]
+  }
+}
