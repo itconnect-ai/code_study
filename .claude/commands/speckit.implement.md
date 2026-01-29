@@ -48,6 +48,7 @@ You **MUST** consider the user input before proceeding (if not empty).
 3. Load and analyze the implementation context:
    - **REQUIRED**: Read tasks.md for the complete task list and execution plan
    - **REQUIRED**: Read plan.md for tech stack, architecture, and file structure
+   - **REQUIRED**: Read constitution file (my_constitution.md or .specify/memory/constitution.md) for development rules including Task Report requirements
    - **IF EXISTS**: Read data-model.md for entities and relationships
    - **IF EXISTS**: Read contracts/ for API specifications and test requirements
    - **IF EXISTS**: Read research.md for technical decisions and constraints
@@ -139,6 +140,12 @@ You **MUST** consider the user input before proceeding (if not empty).
    - Provide clear error messages with context for debugging
    - Suggest next steps if implementation cannot proceed
    - **IMPORTANT** For completed tasks, make sure to mark the task off as [X] in the tasks file.
+
+   **⚠️ MANDATORY: Task Report (Constitution Requirement)**
+   - After completing EACH task, create a Task Report in `docs/task-reports/`
+   - Filename: `TASK-{NNN}-{short-title}.md` (e.g., `TASK-001-프로젝트-디렉토리-구조-생성.md`)
+   - Follow the template defined in constitution (상태, 날짜, 작업 요약, 변경 파일, TDD 결과, 기술 결정, 비고)
+   - This is NON-NEGOTIABLE - do NOT skip Task Reports
 
 9. Completion validation:
    - Verify all required tasks are completed

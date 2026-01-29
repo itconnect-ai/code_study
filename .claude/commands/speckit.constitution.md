@@ -16,13 +16,29 @@ You **MUST** consider the user input before proceeding (if not empty).
 
 ## Outline
 
-You are updating the project constitution at `.specify/memory/constitution.md`. This file is a TEMPLATE containing placeholder tokens in square brackets (e.g. `[PROJECT_NAME]`, `[PRINCIPLE_1_NAME]`). Your job is to (a) collect/derive concrete values, (b) fill the template precisely, and (c) propagate any amendments across dependent artifacts.
+You are managing the project constitution. The constitution defines non-negotiable development rules (TDD, Task Reports, commit conventions, etc.).
+
+**IMPORTANT: Source Priority**
+1. **PRIMARY SOURCE**: Check if `my_constitution.md` exists in project root
+   - If YES: This is the user-provided constitution - use it as the source of truth
+   - Sync its content to `.specify/memory/constitution.md` for speckit internal use
+2. **FALLBACK**: If `my_constitution.md` does NOT exist, use `.specify/memory/constitution.md` as a template
 
 Follow this execution flow:
 
-1. Load the existing constitution template at `.specify/memory/constitution.md`.
-   - Identify every placeholder token of the form `[ALL_CAPS_IDENTIFIER]`.
-   **IMPORTANT**: The user might require less or more principles than the ones used in the template. If a number is specified, respect that - follow the general template. You will update the doc accordingly.
+1. **Check for user-provided constitution**:
+   - Check if `my_constitution.md` exists in project root
+   - If it exists:
+     - Read and parse its content
+     - This is the PRIMARY source - do NOT overwrite user's rules
+     - Sync content to `.specify/memory/constitution.md`
+     - Skip to step 4 (Consistency propagation)
+   - If it does NOT exist:
+     - Load the template at `.specify/memory/constitution.md`
+     - Identify every placeholder token of the form `[ALL_CAPS_IDENTIFIER]`
+     - Continue with step 2 (interactive collection)
+
+**IMPORTANT**: The user might require less or more principles than the ones used in the template. If a number is specified, respect that - follow the general template. You will update the doc accordingly.
 
 2. Collect/derive values for placeholders:
    - If user input (conversation) supplies a value, use it.

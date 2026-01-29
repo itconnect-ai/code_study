@@ -249,3 +249,15 @@ With multiple developers:
 - Commit after each task or logical group
 - Stop at any checkpoint to validate story independently
 - Avoid: vague tasks, same file conflicts, cross-story dependencies that break independence
+
+---
+
+## Task Report Requirement (Constitution)
+
+**⚠️ MANDATORY**: After completing EACH task, create a Task Report following the constitution.
+
+- **Location**: `docs/task-reports/`
+- **Filename**: `TASK-{NNN}-{short-title}.md` (e.g., `TASK-001-프로젝트-디렉토리-구조-생성.md`)
+- **Template**: See constitution for full template (상태, 날짜, 작업 요약, 변경 파일, TDD 결과, 기술 결정, 비고)
+
+This is NON-NEGOTIABLE - do NOT skip Task Reports.
