@@ -12,7 +12,8 @@
       "Bash(git rev-parse:*)",
       "Bash(git add:*)",
       "Bash(git commit -m \"$\\(cat <<''EOF''\nUpdate speckit templates and commands\n\n- Update speckit.constitution.md and speckit.implement.md\n- Update agent-file-template.md and tasks-template.md\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(git commit:*)"
     ]
   }
 }

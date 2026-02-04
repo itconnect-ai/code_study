@@ -57,7 +57,7 @@ Web application structure (from plan.md):
 ### Database & Migrations
 
 - [ ] T008 Setup Alembic migrations framework in backend/alembic/
-- [ ] T009 Create initial database migration with all entity schemas from data-model.md in backend/alembic/versions/001_initial_schema.py
+- [ ] T009 Create base model classes (backend/src/models/base.py) and initial database migration (manual SQL, no autogenerate) with all entity schemas from data-model.md in backend/alembic/versions/001_initial_schema.py
 - [ ] T010 [P] Implement database connection and session management in backend/src/db/session.py
 - [ ] T011 [P] Create database configuration and connection pooling in backend/src/db/config.py
 
@@ -117,8 +117,8 @@ Web application structure (from plan.md):
 
 ### Backend: Authentication Models & Services
 
-- [ ] T023 [P] Create User SQLAlchemy model in backend/src/models/user.py
-- [ ] T024 [P] Create RefreshToken SQLAlchemy model in backend/src/models/refresh_token.py
+- [ ] T023 [P] Create User SQLAlchemy model in backend/src/models/user.py (must match T009 migration schema)
+- [ ] T024 [P] Create RefreshToken SQLAlchemy model in backend/src/models/refresh_token.py (must match T009 migration schema)
 - [ ] T025 Implement UserService (register, login, logout) in backend/src/services/auth/user_service.py
 - [ ] T026 Implement TokenService (create access/refresh tokens, verify, rotate) in backend/src/services/auth/token_service.py
 - [ ] T027 [P] Create authentication dependency for route protection in backend/src/api/dependencies.py
@@ -160,7 +160,7 @@ Web application structure (from plan.md):
 
 ### Backend: Project Models & Services
 
-- [ ] T043 Create Project SQLAlchemy model with soft delete fields in backend/src/models/project.py
+- [ ] T043 Create Project SQLAlchemy model with soft delete fields in backend/src/models/project.py (must match T009 migration schema)
 - [ ] T044 Implement ProjectService (create, get, update, soft delete) in backend/src/services/project_service.py
 - [ ] T045 Implement project ownership validation in backend/src/services/project_service.py
 
@@ -200,9 +200,9 @@ Web application structure (from plan.md):
 
 ### Backend: Task & Code Models
 
-- [ ] T061 [P] Create Task SQLAlchemy model with sequential task_number in backend/src/models/task.py
-- [ ] T062 [P] Create UploadedCode SQLAlchemy model in backend/src/models/uploaded_code.py
-- [ ] T063 [P] Create CodeFile SQLAlchemy model in backend/src/models/code_file.py
+- [ ] T061 [P] Create Task SQLAlchemy model with sequential task_number in backend/src/models/task.py (must match T009 migration schema)
+- [ ] T062 [P] Create UploadedCode SQLAlchemy model in backend/src/models/uploaded_code.py (must match T009 migration schema)
+- [ ] T063 [P] Create CodeFile SQLAlchemy model in backend/src/models/code_file.py (must match T009 migration schema)
 - [ ] T064 Implement file validation utilities (extension, size, binary detection) in backend/src/utils/file_validator.py
 - [ ] T065 Implement language detection service using Pygments in backend/src/services/code_analysis/language_detector.py
 - [ ] T066 Implement code complexity analyzer in backend/src/services/code_analysis/complexity_analyzer.py
@@ -254,7 +254,7 @@ Web application structure (from plan.md):
 
 ### Backend: Document Models & AI Integration
 
-- [ ] T090 Create LearningDocument SQLAlchemy model with JSONB content in backend/src/models/learning_document.py
+- [ ] T090 Create LearningDocument SQLAlchemy model with JSONB content in backend/src/models/learning_document.py (must match T009 migration schema)
 - [ ] T091 Implement Gemini API client wrapper in backend/src/services/ai/gemini_client.py
 - [ ] T092 Implement prompt templates for 7-chapter document generation in backend/src/services/ai/prompts.py
 - [ ] T093 Implement DocumentGenerationService with retry logic in backend/src/services/document/document_generation_service.py
@@ -304,7 +304,7 @@ Web application structure (from plan.md):
 
 ### Backend: Practice Models & Generation
 
-- [ ] T115 Create PracticeProblem SQLAlchemy model in backend/src/models/practice_problem.py
+- [ ] T115 Create PracticeProblem SQLAlchemy model in backend/src/models/practice_problem.py (must match T009 migration schema)
 - [ ] T116 Implement practice problem generation prompts in backend/src/services/ai/prompts.py
 - [ ] T117 Implement PracticeGenerationService (generate 5 problems with hints) in backend/src/services/practice/practice_generation_service.py
 - [ ] T118 Implement Celery task for async practice generation in backend/src/tasks/practice_generation.py
@@ -343,7 +343,7 @@ Web application structure (from plan.md):
 
 ### Backend: Q&A Models & Services
 
-- [ ] T132 Create Question SQLAlchemy model in backend/src/models/question.py
+- [ ] T132 Create Question SQLAlchemy model in backend/src/models/question.py (must match T009 migration schema)
 - [ ] T133 Implement Q&A generation prompts (context-aware) in backend/src/services/ai/prompts.py
 - [ ] T134 Implement QuestionService (create, answer with Gemini, get history) in backend/src/services/qa/question_service.py
 - [ ] T135 Implement context extraction from document and code in backend/src/services/qa/context_builder.py
@@ -384,7 +384,7 @@ Web application structure (from plan.md):
 
 ### Backend: Progress Models & Services
 
-- [ ] T151 Create Progress SQLAlchemy model with JSONB arrays in backend/src/models/progress.py
+- [ ] T151 Create Progress SQLAlchemy model with JSONB arrays in backend/src/models/progress.py (must match T009 migration schema)
 - [ ] T152 Implement ProgressService (track chapters, problems, completion) in backend/src/services/progress/progress_service.py
 - [ ] T153 Implement progress calculation utilities (percentage, completion status) in backend/src/services/progress/progress_calculator.py
 
